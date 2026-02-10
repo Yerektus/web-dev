@@ -4,7 +4,6 @@ const welcomeButton = document.getElementById("register-button")
 const alertDiv = document.getElementById('alert')
 
 welcomeButton.addEventListener('click', () => {
-    console.log(nameInput.value)
     if (!nameInput.value) {
         alertDiv.style.display = 'block'
         alertDiv.textContent = "Enter a name!"
