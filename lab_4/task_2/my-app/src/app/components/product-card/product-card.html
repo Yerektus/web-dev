@@ -1,0 +1,49 @@
+<div class="product-card">
+  <div class="image-container">
+    <img [src]="getCurrentImage()" [alt]="product.name" class="product-image">
+    
+    <div class="gallery-controls" *ngIf="product.images.length > 1">
+      <button class="gallery-btn prev" (click)="previousImage()">‹</button>
+      <button class="gallery-btn next" (click)="nextImage()">›</button>
+    </div>
+
+    <div class="image-dots" *ngIf="product.images.length > 1">
+      <span 
+        *ngFor="let img of product.images; let i = index" 
+        class="dot" 
+        [class.active]="i === currentImageIndex"
+        (click)="currentImageIndex = i">
+      </span>
+    </div>
+  </div>
+
+  <div class="product-info">
+    <h3 class="product-name">{{ product.name }}</h3>
+
+    <div class="rating">
+      <span class="stars">
+        <span *ngFor="let star of getStars()" class="star">{{ star }}</span>
+      </span>
+      <span class="rating-number">{{ product.rating }}</span>
+    </div>
+
+    <p class="description">{{ product.description }}</p>
+
+    <div class="price">{{ formatPrice(product.price) }} ₸</div>
+
+    <div class="actions">
+      <a [href]="product.link" target="_blank" class="btn btn-primary">
+        View on Kaspi.kz
+      </a>
+      
+      <div class="share-buttons">
+        <button (click)="shareOnWhatsApp()" class="btn btn-share" title="Share on WhatsApp">
+          📞 WhatsApp
+        </button>
+        <button (click)="shareOnTelegram()" class="btn btn-share" title="Share on Telegram">
+          🚀 Telegram
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
