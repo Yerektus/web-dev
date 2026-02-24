@@ -1,0 +1,31 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>🛒 KaspiMarket</h1>
+    <p class="subtitle">Лучшие товары с <a href="https://kaspi.kz" target="_blank">Kaspi.kz</a></p>
+  </header>
+
+  <nav class="category-nav">
+    <button
+      *ngFor="let category of categories"
+      class="category-btn"
+      [class.active]="selectedCategory?.id === category.id"
+      (click)="selectCategory(category)">
+      {{ category.name }}
+    </button>
+  </nav>
+
+  <main class="main-content">
+    <div *ngIf="!selectedCategory" class="welcome-message">
+      <div class="welcome-icon">🛍️</div>
+      <h2>Добро пожаловать!</h2>
+      <p>Выберите категорию выше, чтобы увидеть товары.</p>
+    </div>
+
+    <app-product-list
+      *ngIf="selectedCategory"
+      [products]="products"
+      [categoryName]="selectedCategory.name"
+      (productDeleted)="onProductDeleted($event)">
+    </app-product-list>
+  </main>
+</div>

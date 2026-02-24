@@ -1,0 +1,15 @@
+<div class="product-list-container">
+  <h2 class="category-title">{{ categoryName }}</h2>
+
+  <p *ngIf="products.length === 0" class="empty-message">
+    😕 В этой категории нет товаров.
+  </p>
+
+  <div class="product-grid">
+    <app-product-item
+      *ngFor="let product of products"
+      [product]="product"
+      (deleteProduct)="onDeleteProduct($event)">
+    </app-product-item>
+  </div>
+</div>

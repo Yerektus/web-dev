@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.app-header {
+  background: linear-gradient(135deg, #e30613, #b50010);
+  color: white;
+  text-align: center;
+  padding: 28px 20px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.app-header .subtitle {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.app-header .subtitle a {
+  color: #ffe;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.app-header .subtitle a:hover {
+  text-decoration: underline;
+}
+
+/* ── Category Nav ────────────────────────────────────── */
+.category-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.category-btn {
+  padding: 10px 28px;
+  border: 2px solid #e30613;
+  border-radius: 25px;
+  background: transparent;
+  color: #e30613;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-btn:hover {
+  background: #e30613;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.category-btn.active {
+  background: #e30613;
+  color: white;
+  box-shadow: 0 3px 10px rgba(227,6,19,0.35);
+}
+
+/* ── Main Content ────────────────────────────────────── */
+.main-content {
+  flex: 1;
+  padding: 24px 20px;
+}
+
+/* ── Welcome ─────────────────────────────────────────── */
+.welcome-message {
+  text-align: center;
+  padding: 80px 20px;
+  color: #888;
+}
+
+.welcome-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.welcome-message h2 {
+  font-size: 1.6rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.welcome-message p {
+  font-size: 1rem;
+}
